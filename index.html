@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Highlighter</title>
+    <style>
+        .comment {
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .red {
+            background-color: #f8d7da;
+        }
+        .green {
+            background-color: #d4edda;
+        }
+    </style>
+</head>
+<body>
+<div id="comments"></div>
+
+<script>
+    async function loadComments() {
+        try {
+            const response = await fetch('comments.json');
+            const comments = await response.text();
+            const commentLines = comments.split('\n').filter(line => line.trim());
+
+            const commentsContainer = document.getElementById('comments');
+            commentLines.forEach(line => {
+                try {
+                    const commentData = JSON.parse(line);
+                    const commentDiv = document.createElement('div');
+                    commentDiv.classList.add('comment', commentData.color);
+                    commentDiv.textContent = commentData.text;
+                    commentsContainer.appendChild(commentDiv);
+                } catch (e) {
+                    console.error('Failed to parse line:', line, e);
+                }
+            });
+        } catch (e) {
+            console.error('Failed to load comments:', e);
+        }
+    }
+
+    loadComments();
+</script>
+</body>
+</html>
