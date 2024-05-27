@@ -1,0 +1,540 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "for,goodby,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,okay,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "howdi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "fuck": {
+            "intent": "offensive.comment",
+            "domain": "default"
+          },
+          "shit": {
+            "intent": "offensive.comment",
+            "domain": "default"
+          },
+          "damn": {
+            "intent": "offensive.comment",
+            "domain": "default"
+          },
+          "bastard": {
+            "intent": "offensive.comment",
+            "domain": "default"
+          },
+          "dumbass": {
+            "intent": "offensive.comment",
+            "domain": "default"
+          },
+          "idiot": {
+            "intent": "offensive.comment",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "default",
+          "offensive.comment": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "goodbye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye bye take care",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "okay see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "fuck",
+            "intent": "offensive.comment"
+          },
+          {
+            "domain": "default",
+            "utterance": "shit",
+            "intent": "offensive.comment"
+          },
+          {
+            "domain": "default",
+            "utterance": "damn",
+            "intent": "offensive.comment"
+          },
+          {
+            "domain": "default",
+            "utterance": "bastard",
+            "intent": "offensive.comment"
+          },
+          {
+            "domain": "default",
+            "utterance": "dumbass",
+            "intent": "offensive.comment"
+          },
+          {
+            "domain": "default",
+            "utterance": "idiot",
+            "intent": "offensive.comment"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "goodby": 1,
+              "for": 1,
+              "now": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "okay": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1,
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1,
+              "fuck": 1,
+              "shit": 1,
+              "damn": 1,
+              "bastard": 1,
+              "dumbass": 1,
+              "idiot": 1
+            },
+            "intents": {
+              "greetings.bye": 1,
+              "greetings.hello": 1,
+              "offensive.comment": 1
+            },
+            "intentFeatures": {
+              "greetings.bye": {
+                "goodby": 1,
+                "for": 1,
+                "now": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "okay": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1
+              },
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "howdi": 1
+              },
+              "offensive.comment": {
+                "fuck": 1,
+                "shit": 1,
+                "damn": 1,
+                "bastard": 1,
+                "dumbass": 1,
+                "idiot": 1
+              }
+            },
+            "featuresToIntent": {
+              "goodby": [
+                "greetings.bye"
+              ],
+              "for": [
+                "greetings.bye"
+              ],
+              "now": [
+                "greetings.bye"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "take": [
+                "greetings.bye"
+              ],
+              "care": [
+                "greetings.bye"
+              ],
+              "okay": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "i": [
+                "greetings.bye"
+              ],
+              "must": [
+                "greetings.bye"
+              ],
+              "go": [
+                "greetings.bye"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "howdi": [
+                "greetings.hello"
+              ],
+              "fuck": [
+                "offensive.comment"
+              ],
+              "shit": [
+                "offensive.comment"
+              ],
+              "damn": [
+                "offensive.comment"
+              ],
+              "bastard": [
+                "offensive.comment"
+              ],
+              "dumbass": [
+                "offensive.comment"
+              ],
+              "idiot": [
+                "offensive.comment"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "goodby",
+                "for",
+                "now",
+                "bye",
+                "take",
+                "care",
+                "okay",
+                "see",
+                "you",
+                "later",
+                "i",
+                "must",
+                "go",
+                "hello",
+                "hi",
+                "howdi",
+                "fuck",
+                "shit",
+                "damn",
+                "bastard",
+                "dumbass",
+                "idiot"
+              ],
+              "intents": [
+                "greetings.bye",
+                "greetings.hello",
+                "offensive.comment"
+              ],
+              "perceptrons": [
+                [
+                  4.1554388999938965,
+                  4.294098854064941,
+                  4.294098854064941,
+                  4.353517055511475,
+                  4.218064785003662,
+                  4.218064785003662,
+                  3.209102153778076,
+                  3.209102153778076,
+                  3.209102153778076,
+                  3.209102153778076,
+                  4.2806620597839355,
+                  4.2806620597839355,
+                  4.2806620597839355,
+                  -1.5126409530639648,
+                  -1.4858300685882568,
+                  -1.4644701480865479,
+                  -1.4475945234298706,
+                  -1.441983699798584,
+                  -1.4395900964736938,
+                  -1.4369415044784546,
+                  -1.4340392351150513,
+                  -1.430883765220642,
+                  1.442528245239729
+                ],
+                [
+                  -0.9506293535232544,
+                  -1.265189290046692,
+                  -1.265189290046692,
+                  -1.3699212074279785,
+                  -1.0553618669509888,
+                  -1.0553618669509888,
+                  -0.870586633682251,
+                  -0.870586633682251,
+                  -0.870586633682251,
+                  -0.870586633682251,
+                  -1.1600079536437988,
+                  -1.1600079536437988,
+                  -1.1600079536437988,
+                  10.629634857177734,
+                  10.6182279586792,
+                  10.58089542388916,
+                  -3.4546124935150146,
+                  -3.4407143592834473,
+                  -3.4261600971221924,
+                  -3.410964250564575,
+                  -3.3951425552368164,
+                  -3.3787107467651367,
+                  3.486950936777199
+                ],
+                [
+                  -1.8823459148406982,
+                  -2.617948532104492,
+                  -2.617948532104492,
+                  -2.863809823989868,
+                  -2.12819504737854,
+                  -2.12819504737854,
+                  -1.7818081378936768,
+                  -1.7818081378936768,
+                  -1.7818081378936768,
+                  -1.7818081378936768,
+                  -2.373929977416992,
+                  -2.373929977416992,
+                  -2.373929977416992,
+                  -6.8256402015686035,
+                  -6.792596817016602,
+                  -6.758278846740723,
+                  7.24580192565918,
+                  7.25158166885376,
+                  7.232048511505127,
+                  7.211233139038086,
+                  7.189149379730225,
+                  7.1658124923706055,
+                  6.993432137015087
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "goodbye for now"
+      ],
+      [
+        "en",
+        "bye bye take care"
+      ],
+      [
+        "en",
+        "okay see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "fuck"
+      ],
+      [
+        "en",
+        "shit"
+      ],
+      [
+        "en",
+        "damn"
+      ],
+      [
+        "en",
+        "bastard"
+      ],
+      [
+        "en",
+        "dumbass"
+      ],
+      [
+        "en",
+        "idiot"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.bye": [
+          {
+            "answer": "Till next time"
+          },
+          {
+            "answer": "see you soon!"
+          }
+        ],
+        "greetings.hello": [
+          {
+            "answer": "Hey there!"
+          },
+          {
+            "answer": "Greetings!"
+          }
+        ],
+        "offensive.comment": [
+          {
+            "answer": "Your comment has been flagged as offensive."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
